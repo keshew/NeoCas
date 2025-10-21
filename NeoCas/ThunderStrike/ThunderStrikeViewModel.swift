@@ -12,7 +12,8 @@ class ThunderStrikeViewModel: ObservableObject {
     private var timer: Timer?
     private var crashMultiplier: Double = 0.0
     private let multipliersKey = "lastMultipliers"
-
+    @ObservedObject private var soundManager = SoundManager.shared
+    
     var lastFourMultipliers: [Double] {
         let logs = multipliersLog.suffix(4)
         let paddingCount = max(0, 4 - logs.count)

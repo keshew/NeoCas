@@ -12,7 +12,7 @@ class VegasLuxViewModel: ObservableObject {
     @Published var isWin = false
     @Published var win = 0
     var spinningTimer: Timer?
-    
+    @ObservedObject private var soundManager = SoundManager.shared
     init() {
         resetSlots()
     }
@@ -35,6 +35,7 @@ class VegasLuxViewModel: ObservableObject {
     }
     
     func spin() {
+        soundManager.playSlot3()
         let _  = GameStatsManager.shared.spendCoins(bet)
         coin = GameStatsManager.shared.coins
         isSpinning = true
@@ -57,6 +58,7 @@ class VegasLuxViewModel: ObservableObject {
                         if col == columns - 1 {
                             self.isSpinning = false
                             self.checkWin()
+                            self.soundManager.stopAllSoundEffects()
                         }
                     }
                 }

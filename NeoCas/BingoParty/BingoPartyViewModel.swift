@@ -15,7 +15,7 @@ class BingoPartyViewModel: ObservableObject {
 
     @Published var guessHistory: [Int] = []
     private let guessHistoryKey = "guessHistory"
-
+    @ObservedObject private var soundManager = SoundManager.shared
     init() {
         generateRandomNumbers()
         loadGuessHistory()
@@ -42,6 +42,7 @@ class BingoPartyViewModel: ObservableObject {
     }
 
     func startAnimation() {
+        soundManager.playBingo()
         guard let userNumber = userSelectedNumber else {
             showAlert = true
             return
@@ -70,7 +71,7 @@ class BingoPartyViewModel: ObservableObject {
             stepsDone += 1
 
             let progress = Double(stepsDone) / Double(totalSteps)
-            let delay = 0.05 + 0.3 * progress * progress 
+            let delay = 0.05 + 0.15 * progress * progress 
 
             DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
                 animateStep()
@@ -82,6 +83,7 @@ class BingoPartyViewModel: ObservableObject {
 
     func finishGame() {
         guard let finalNum = finalNumber, let userNum = userSelectedNumber else { return }
+        soundManager.stopAllSoundEffects()
         if finalNum == userNum {
             let _  = GameStatsManager.shared.addCoins(bet * 2)
             coin = GameStatsManager.shared.coins

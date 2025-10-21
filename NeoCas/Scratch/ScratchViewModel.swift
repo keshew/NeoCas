@@ -6,7 +6,8 @@ class ScratchViewModel: ObservableObject {
     @Published var coin = GameStatsManager.shared.coins
     @Published var bet = 10
     @Published var winningIndexes: [Int] = []
-
+    @ObservedObject private var soundManager = SoundManager.shared
+    
     let maxOpen = 5
     let symbolArray = [
         Symbol(image: "scratchB1", value: "100"),
@@ -18,6 +19,7 @@ class ScratchViewModel: ObservableObject {
     ]
     
     func openCell(at index: Int) {
+        soundManager.playTap()
         guard isGameActive else { return }
         guard openedSymbols.count < maxOpen else { return }
         guard !openedSymbols.contains(where: { $0.index == index }) else { return }

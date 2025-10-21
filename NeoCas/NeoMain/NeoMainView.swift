@@ -18,6 +18,7 @@ struct NeoMainView: View {
     @State var game5 = false
     @State var game6 = false
     @State var game7 = false
+    @ObservedObject private var soundManager = SoundManager.shared
     
     let grid = [GridItem(.flexible()), GridItem(.flexible())]
     let slots = [Slots(image: "game1", name: "NEON RUSH: FRUIT 2080"),
@@ -632,6 +633,9 @@ struct NeoMainView: View {
                     .zIndex(1)
                     .padding(.top)
             }
+        }
+        .onAppear {
+            soundManager.playBackgroundMusic()
         }
         .fullScreenCover(isPresented: $isProfile, content: {
             NeoMenuView()
