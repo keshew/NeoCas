@@ -136,8 +136,8 @@ struct NeoMainView: View {
                                 .pressableButtonStyle()
                             }
                             
-                            Text("NAME GAME")
-                                .FontHeavy(size: 30)
+                            Text("LUCKY CHARM CASINO")
+                                .FontHeavy(size: 26)
                                 .shadow(color: Color(red: 0/255, green: 255/255, blue: 255/255).opacity(0.3), radius: 15)
                                 .overlay(
                                     LinearGradient(
@@ -151,11 +151,12 @@ struct NeoMainView: View {
                                         endPoint: .trailing
                                     )
                                     .mask(
-                                        Text("NAME GAME")
-                                            .FontHeavy(size: 30)
+                                        Text("LUCKY CHARM CASINO")
+                                            .FontHeavy(size: 26)
                                             .shadow(color: Color(red: 0/255, green: 255/255, blue: 255/255).opacity(0.3), radius: 15)
                                     )
                                 )
+                                .offset(y: 5)
                         }
                         
                         ScrollView(showsIndicators: false) {

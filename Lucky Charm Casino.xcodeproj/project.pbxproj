@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		86D412342E9BD0A500FAF635 /* NeoCas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeoCas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86D412342E9BD0A500FAF635 /* Lucky Charm Casino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lucky Charm Casino.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		86D412AB2E9BD1B800FAF635 /* Exceptions for "NeoCas" folder in "NeoCas" target */ = {
+		86D412AB2E9BD1B800FAF635 /* Exceptions for "NeoCas" folder in "Lucky Charm Casino" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 86D412332E9BD0A500FAF635 /* NeoCas */;
+			target = 86D412332E9BD0A500FAF635 /* Lucky Charm Casino */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -24,7 +24,7 @@
 		86D412362E9BD0A500FAF635 /* NeoCas */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				86D412AB2E9BD1B800FAF635 /* Exceptions for "NeoCas" folder in "NeoCas" target */,
+				86D412AB2E9BD1B800FAF635 /* Exceptions for "NeoCas" folder in "Lucky Charm Casino" target */,
 			);
 			path = NeoCas;
 			sourceTree = "<group>";
@@ -53,7 +53,7 @@
 		86D412352E9BD0A500FAF635 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				86D412342E9BD0A500FAF635 /* NeoCas.app */,
+				86D412342E9BD0A500FAF635 /* Lucky Charm Casino.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,9 +61,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		86D412332E9BD0A500FAF635 /* NeoCas */ = {
+		86D412332E9BD0A500FAF635 /* Lucky Charm Casino */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86D412422E9BD0A600FAF635 /* Build configuration list for PBXNativeTarget "NeoCas" */;
+			buildConfigurationList = 86D412422E9BD0A600FAF635 /* Build configuration list for PBXNativeTarget "Lucky Charm Casino" */;
 			buildPhases = (
 				86D412302E9BD0A500FAF635 /* Sources */,
 				86D412312E9BD0A500FAF635 /* Frameworks */,
@@ -76,11 +76,11 @@
 			fileSystemSynchronizedGroups = (
 				86D412362E9BD0A500FAF635 /* NeoCas */,
 			);
-			name = NeoCas;
+			name = "Lucky Charm Casino";
 			packageProductDependencies = (
 			);
 			productName = NeoCas;
-			productReference = 86D412342E9BD0A500FAF635 /* NeoCas.app */;
+			productReference = 86D412342E9BD0A500FAF635 /* Lucky Charm Casino.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -98,7 +98,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 86D4122F2E9BD0A500FAF635 /* Build configuration list for PBXProject "NeoCas" */;
+			buildConfigurationList = 86D4122F2E9BD0A500FAF635 /* Build configuration list for PBXProject "Lucky Charm Casino" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -112,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				86D412332E9BD0A500FAF635 /* NeoCas */,
+				86D412332E9BD0A500FAF635 /* Lucky Charm Casino */,
 			);
 		};
 /* End PBXProject section */
@@ -269,6 +269,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NeoCas/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Lucky Charm Casino";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -305,6 +306,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NeoCas/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Lucky Charm Casino";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -332,7 +334,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		86D4122F2E9BD0A500FAF635 /* Build configuration list for PBXProject "NeoCas" */ = {
+		86D4122F2E9BD0A500FAF635 /* Build configuration list for PBXProject "Lucky Charm Casino" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86D412402E9BD0A600FAF635 /* Debug */,
@@ -341,7 +343,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86D412422E9BD0A600FAF635 /* Build configuration list for PBXNativeTarget "NeoCas" */ = {
+		86D412422E9BD0A600FAF635 /* Build configuration list for PBXNativeTarget "Lucky Charm Casino" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86D412432E9BD0A600FAF635 /* Debug */,
