@@ -174,33 +174,37 @@ struct VegasLuxView: View {
                                             
                                             VStack {
                                                 ElemetnalPlaceholder(text: "BET AMOUNT")
-                                                Rectangle()
-                                                    .fill(LinearGradient(
-                                                        colors: [
-                                                            Color(red: 0/255, green: 255/255, blue: 255/255),
-                                                            Color(red: 6/255, green: 95/255, blue: 184/255),
-                                                            Color(red: 168/255, green: 3/255, blue: 168/255),
-                                                            Color(red: 3/255, green: 167/255, blue: 83/255),
-                                                            Color(red: 84/255, green: 15/255, blue: 158/255)
-                                                        ],
-                                                        startPoint: .topLeading,
-                                                        endPoint: .bottomTrailing
-                                                    ).opacity(0.2))
-                                                    .overlay {
-                                                        RoundedRectangle(cornerRadius: 8)
-                                                            .stroke(Color(red: 0/255, green: 255/255, blue: 255/255).opacity(0.5), lineWidth: 1)
-                                                            .overlay {
-                                                                HStack {
-                                                                    Text("\(scratchModel.bet)")
-                                                                        .FontRegular(size: 16)
-                                                                    Spacer()
-                                                                }
-                                                                .padding(.horizontal)
-                                                            }
-                                                    }
-                                                    .frame(height: 36)
-                                                    .cornerRadius(8)
+                                                
+                                                CustomTextFiled4(text: $scratchModel.betString, placeholder: "")
                                                     .padding(.horizontal)
+                                                
+//                                                Rectangle()
+//                                                    .fill(LinearGradient(
+//                                                        colors: [
+//                                                            Color(red: 0/255, green: 255/255, blue: 255/255),
+//                                                            Color(red: 6/255, green: 95/255, blue: 184/255),
+//                                                            Color(red: 168/255, green: 3/255, blue: 168/255),
+//                                                            Color(red: 3/255, green: 167/255, blue: 83/255),
+//                                                            Color(red: 84/255, green: 15/255, blue: 158/255)
+//                                                        ],
+//                                                        startPoint: .topLeading,
+//                                                        endPoint: .bottomTrailing
+//                                                    ).opacity(0.2))
+//                                                    .overlay {
+//                                                        RoundedRectangle(cornerRadius: 8)
+//                                                            .stroke(Color(red: 0/255, green: 255/255, blue: 255/255).opacity(0.5), lineWidth: 1)
+//                                                            .overlay {
+//                                                                HStack {
+//                                                                    Text("\(scratchModel.bet)")
+//                                                                        .FontRegular(size: 16)
+//                                                                    Spacer()
+//                                                                }
+//                                                                .padding(.horizontal)
+//                                                            }
+//                                                    }
+//                                                    .frame(height: 36)
+//                                                    .cornerRadius(8)
+//                                                    .padding(.horizontal)
                                                 
                                                 HStack {
                                                     Button(action: {
@@ -405,3 +409,54 @@ struct VegasLuxView: View {
     VegasLuxView()
 }
 
+struct CustomTextFiled4: View {
+    @Binding var text: String
+    @FocusState var isTextFocused: Bool
+    var placeholder: String
+    var body: some View {
+        ZStack(alignment: .leading) {
+            Rectangle()
+                .fill(LinearGradient(
+                    colors: [
+                        Color(red: 0/255, green: 255/255, blue: 255/255),
+                        Color(red: 6/255, green: 95/255, blue: 184/255),
+                        Color(red: 168/255, green: 3/255, blue: 168/255),
+                        Color(red: 3/255, green: 167/255, blue: 83/255),
+                        Color(red: 84/255, green: 15/255, blue: 158/255)
+                    ],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                ).opacity(0.2))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color(red: 0/255, green: 255/255, blue: 255/255).opacity(0.5), lineWidth: 1)
+                }
+                .frame(height: 37)
+                .cornerRadius(8)
+            
+            TextField("", text: $text, onEditingChanged: { isEditing in
+                if !isEditing {
+                    isTextFocused = false
+                }
+            })
+            .autocorrectionDisabled()
+            .textInputAutocapitalization(.never)
+            .padding(.horizontal, 16)
+            .frame(height: 37)
+            .font(.custom("SFProDisplay-Regular", size: 15))
+            .cornerRadius(9)
+            .foregroundStyle(.white)
+            .focused($isTextFocused)
+            
+            if text.isEmpty && !isTextFocused {
+                Text(placeholder)
+                    .FontRegular(size: 12)
+                    .frame(height: 37)
+                    .padding(.leading, 15)
+                    .onTapGesture {
+                        isTextFocused = true
+                    }
+            }
+        }
+    }
+}

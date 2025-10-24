@@ -16,7 +16,13 @@ class VegasLuxViewModel: ObservableObject {
     init() {
         resetSlots()
     }
-
+    @Published var betString: String = "10" {
+        didSet {
+            if let newBet = Int(betString), newBet > 0 {
+                bet = newBet
+            }
+        }
+    }
     let symbolArray = [
         Symbol(image: "vegas1", value: "100"),
         Symbol(image: "vegas2", value: "50"),

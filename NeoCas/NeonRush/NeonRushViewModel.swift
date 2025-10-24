@@ -16,7 +16,13 @@ class NeonRushViewModel: ObservableObject {
     init() {
         resetSlots()
     }
-    
+    @Published var betString: String = "10" {
+        didSet {
+            if let newBet = Int(betString), newBet > 0 {
+                bet = newBet
+            }
+        }
+    }
     let symbolArray = [
         Symbol(image: "rush1", value: "100"),
         Symbol(image: "rush2", value: "50"),

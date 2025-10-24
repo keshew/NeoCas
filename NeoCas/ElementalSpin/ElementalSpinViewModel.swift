@@ -13,6 +13,14 @@ class ElementalSpinViewModel: ObservableObject {
     @Published var win = 0
     var spinningTimer: Timer?
     @ObservedObject private var soundManager = SoundManager.shared
+    @Published var betString: String = "10" {
+        didSet {
+            if let newBet = Int(betString), newBet > 0 {
+                bet = newBet
+            }
+        }
+    }
+
     init() {
         resetSlots()
     }
